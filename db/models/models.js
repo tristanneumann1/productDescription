@@ -2,7 +2,7 @@ const product = require('../index.js');
 const Sequelize = require('sequelize');
 
 const productModel = product.define('product', {
-  productName: {
+  'product_name': {
     type: Sequelize.STRING,
     allowNull: false,
     unique: true
@@ -19,19 +19,21 @@ const productModel = product.define('product', {
 
 
 const pictureModel = product.define('product_picture', {
-  pictureUrl: {
+  'picture_url': {
     type: Sequelize.STRING
   }
 });
 pictureModel.belongsTo(productModel);
+productModel.hasMany(pictureModel, {as: 'Pictures'});
 
 const descriptionModel = product.define('product_description', {
-  description: {
+  'description_text': {
     type: Sequelize.TEXT
   }
 });
 descriptionModel.belongsTo(productModel);
+productModel.hasMany(descriptionModel, {as: 'Descriptions'});
 
-product.sync({force: true});
+product.sync({force: false});
 
 module.exports = {productModel, pictureModel, descriptionModel};
