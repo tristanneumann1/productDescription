@@ -36,4 +36,6 @@ productModel.hasMany(descriptionModel, {as: 'Descriptions'});
 
 product.sync({force: false});
 
+// const seed = require('../seed.js');
+
 module.exports = {productModel, pictureModel, descriptionModel};

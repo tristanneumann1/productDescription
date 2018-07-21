@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Mormozon/productDescription#readme",
   "dependencies": {
+    "aws-sdk": "^2.279.1",
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -27,6 +28,7 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
     "helmet": "^3.12.1",
     "live-server": "^1.2.0",
     "lodash": "^4.17.10",
