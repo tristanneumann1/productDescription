@@ -14,7 +14,7 @@ const Description = (props) => {
       </div> <br />
       <DescriptionList descriptions={props.descriptions}/>
     </div> 
-  )
-}
+  );
+};
 
 export default Description;

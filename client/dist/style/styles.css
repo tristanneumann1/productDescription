@@ -28,7 +28,7 @@ a:hover {
 
 .app-container {
   display: grid;
-  grid-template-columns: [col-start] 53px [selected-pic] 50fr [description] 50fr [col-end];
+  grid-template-columns: [col-start] 53px [selected-pic] 40fr [description] 60fr [col-end];
   grid-template-rows: [row-start] auto [title] 100fr [row-end];
   height: 500px;
   width: 100%;
@@ -51,6 +51,22 @@ a:hover {
   border: black solid 1px;
 }
 
+.display-image img {
+  width:100%;
+}
+
+.image-list img {
+  border: gray solid 1px;
+  border-radius: 3px;
+}
+
+.image-entry {
+  margin: 5px;
+}
+
+.image-entry:hover {
+  box-shadow: 0 0 5px 2px #FF904F;
+}
 /* TITLE */
 
 .product-title {

@@ -7,7 +7,7 @@ const ProductTitle = (props) => {
       {props.productName} <br />
       {props.rating}
     </div>
-  )
-}
+  );
+};
 
 export default ProductTitle;
