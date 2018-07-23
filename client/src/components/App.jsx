@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DisplayImage from './Image/DisplayImage.jsx';
 import ProductTitle from './ProductTitle.jsx';
 import Description from './Description/Description.jsx';
+import ImageList from './Image/ImageList';
 import axios from 'axios';
 
 
@@ -18,7 +19,7 @@ class App extends Component {
       this.setState({
         productName: product.data.product_name,
         rating: product.data.rating,
-        pictures: product.data.pictures,
+        pictures: product.data.pictureUrls,
         price: product.data.price,
         descriptions: product.data.descriptionTexts,
         displayedPicture: product.data.pictureUrls[0].slice(0, -6) || '',
@@ -28,10 +29,11 @@ class App extends Component {
   render() {
     console.log('disp pic sent', this.state.displayedPicture)
     return (
-      <div class="container"> 
-        <DisplayImage displayedPicture={this.state.displayedPicture} pictures={this.state.pictures} />
-        <ProductTitle productName={this.state.productName} rating={this.state.rating}/>
-        <Description price={this.state.price} descriptions={this.state.descriptions}/>
+      <div class="app-container">
+        <ImageList pictures={this.state.pictures}/>
+        <DisplayImage displayedPicture={this.state.displayedPicture} />
+        <ProductTitle productName={this.state.productName} rating={this.state.rating} />
+        <Description price={this.state.price} descriptions={this.state.descriptions} />
       </div>
     )
   }
