@@ -42,14 +42,16 @@ const getProduct = (productName, cb) => {
 
 
 
-
+  const productToFind =  productName? {
+    product_name: productName
+  } : {
+    id: Math.floor(1 + Math.random() * 49)
+  };
   productModel.findOne({
-    where: {
-      product_name: productName
-    }
+    where: productToFind
   })
   .then((product) => {
-    let { id, price, rating } = product;
+    let { id, price, rating, product_name } = product;
     getPictures(id, (err, pictures)=>{
       if(err) { cb(err) } else {
         getDescriptions(id, (err, descriptions)=>{
@@ -64,7 +66,7 @@ const getProduct = (productName, cb) => {
             });
             // console.log('\npicture obj received: ', pictureUrls, descriptionTexts);
             // console.log('product', {productName, price, rating, pictureUrls, descriptionTexts});
-            cb(null, {productName, price, rating, pictureUrls, descriptionTexts});
+            cb(null, {product_name, price, rating, pictureUrls, descriptionTexts});
           }
         })
       }

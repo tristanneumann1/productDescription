@@ -15,7 +15,7 @@ for(let i = 0; i < ps; i++) {
   products.push({
     productName: faker.commerce.productName(),
     price: faker.commerce.price(),
-    rating: faker.random.number({min: 1, max: 5, precision:2}),
+    rating: faker.random.number({min: 1.0, max: 5.0, precision:0.1}),
   });
 }
 
@@ -24,18 +24,18 @@ for(let j = 0; j < ps * 3; j++) {
     productId: faker.random.number({min: 1, max: ps, precision:1}),
     descriptionText: faker.lorem.sentence(),
   });
-  let productId = faker.random.number({min: 1, max: ps - 1, precision:1});
-  // let pictureLorem = 
+  // let pictureLorem =
+  productId = faker.random.number({min: 1, max: ps, precision:1})
   pictures.push({
     productId,
-    pictureUrl: products[productId].productName.toLowerCase().split(' ')[1] + j + '.jpg'
+    pictureUrl: products[productId - 1].productName.toLowerCase().split(' ')[2] + j + '.jpg'
   });
 }
 
 productPoster = (product, i) => {
   postProduct(product.productName, product.price, product.rating, ()=>{
     if(i < ps - 1) {
-      productPoster(products[i + 1], i + 1);
+      productPoster(products[i], i + 1);
     } else{
       picturePoster(pictures[0], 0);
       return;
@@ -46,7 +46,7 @@ productPoster = (product, i) => {
 picturePoster = (picture, i) => {
   postPicture(picture.pictureUrl, picture.productId, ()=>{
     if(i < ps * 3 - 1) {
-      picturePoster(pictures[i + 1], i + 1);
+      picturePoster(pictures[i], i + 1);
     } else {
       descriptionPoster(descriptions[0], 0);
       return;
@@ -57,7 +57,7 @@ picturePoster = (picture, i) => {
 descriptionPoster = (description, i) => {
   postDescription(description.descriptionText, description.productId, ()=>{
     if(i < ps * 3 - 1) {
-      descriptionPoster(descriptions[i + 1], i + 1);
+      descriptionPoster(descriptions[i], i + 1);
     }
   })
 }
