@@ -25,12 +25,12 @@ class App extends Component {
           displayedPicture: product.data.pictureUrls[0] || '',
         });
       });
+    this.handleChangeDisplay = this.handleChangeDisplay.bind(this);
   }
 
-  handleChangeDisplay(e) {
-    e.preventDefault();
+  handleChangeDisplay(picture) {
     this.setState({
-      displayedPicture: e.target.value,
+      displayedPicture: picture,
     });
   }
 

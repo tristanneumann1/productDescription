@@ -77,6 +77,17 @@ a:hover {
   border: 1px solid black;
 }
 
+.product-title img {
+  width: auto;
+  height: 16px;
+  position: relative;
+}
+
+.product-title .floated {
+  width: 80px;
+  overflow: hidden;
+}
+
 .image-list {
   grid-column: col-start / selected-pic;
   /* grid-column: 0 / 3; */
