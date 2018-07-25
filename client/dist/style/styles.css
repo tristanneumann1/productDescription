@@ -1,24 +1,24 @@
 /* body {
   background-color: powderblue
 } */
-#app {
+:global(#app) {
   border: black solid 3px;
   margin: 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
 }
 
-.bold {
+:global(.bold) {
   font-weight: bold;
 }
 
-a {
+:global(a) {
   font-size: 14px;
   color: blue;
   text-decoration: none;
 }
 
-a:hover {
+:global(a:hover) {
   color: red;
   text-decoration: underline;
 }
@@ -26,7 +26,7 @@ a:hover {
 
 /* CONTAINERS */
 
-.app-container {
+:local(.appContainer) {
   display: grid;
   grid-template-columns: [col-start] 53px [selected-pic] 40fr [description] 60fr [col-end];
   grid-template-rows: [row-start] auto [title] 100fr [row-end];
@@ -34,7 +34,7 @@ a:hover {
   width: 100%;
 }
 
-.price-container {
+:local(.priceContainer) {
   display: grid;
   grid-template-columns: [col-start] auto [price] 100fr [col-end];
   height: auto;
@@ -44,82 +44,83 @@ a:hover {
 
 /* IMAGE */
 
-.display-image {
+:local(.displayImage) {
   grid-column: selected-pic / description;
   grid-row: row-start / row-end;
   float: left;
-  border: black solid 1px;
+  /* border: black solid 1px; */
 }
 
-.display-image img {
+:local(.displayImage img) {
   width:100%;
 }
 
-.image-list img {
+:local(.imageList) img {
   border: gray solid 1px;
   border-radius: 3px;
 }
 
-.image-entry {
+:local(.imageEntry) {
   margin: 5px;
 }
 
-.image-entry:hover {
+:local(.imageEntryDisplayed) {
+  margin: 5px;
   box-shadow: 0 0 5px 2px #FF904F;
 }
 /* TITLE */
 
-.product-title {
+:local(.productTitle) {
   grid-column: description / col-end;
   grid-row: row-start / title;
   font-size: 20px;
   float: right;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
-.product-title img {
+:local(.productTitle img) {
   width: auto;
   height: 16px;
   position: relative;
 }
 
-.product-title .floated {
+:local(.productTitle .floated) {
   width: 80px;
   overflow: hidden;
 }
 
-.image-list {
+:local(.imageList) {
   grid-column: col-start / selected-pic;
   /* grid-column: 0 / 3; */
   grid-row: row-start / row-end;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* DESCRIPTION */
 
-.product-description {
+:local(.productDescription) {
   grid-column: description / col-end;
   grid-row: title / row-end;
   float: left;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
-.price {
+:local(.price) {
   float: left;
   margin-left: 10px;
 }
 
-.price-text {
+:local(.priceText) {
   font-size: 16px;
-  color: red;
+  /* color: red; */
 }
 
-.product-description ul {
+:local(.productDescription ul) {
   list-style: none;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
-li::before {
+:local(li::before) {
   content: "•";
   color: #949494;
   display: inline-block;

@@ -9,16 +9,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.jsx?/,
+        include: path.join(__dirname, '/client/src'),
         loader: 'babel-loader',
-        test: /\.js[x]?/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' }
-        ],
-        exclude: /node_modules/,
-        options: {
-          presets: ['react', 'env']
-        }
+        query: {
+          presets: ['react'], //, 'es2015'
+        },
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
       }
     ]
   },

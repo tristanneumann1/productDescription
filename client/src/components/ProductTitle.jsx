@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import style from '../../dist/style/styles.css';
 
 const ProductTitle = (props) => {
   // let stars = [];
@@ -9,13 +10,13 @@ const ProductTitle = (props) => {
   let ratingWidth = ((halfStars * -0.5 + 5) * -16) - ((halfStars % 2 === 0) ? 0 : 162);
   console.log('star rating: ', halfStars, ratingWidth);
   return (
-    <div class="product-title">
+    <div className={style.productTitle}>
       <a href="#">Amazon Seller</a> <br />
       {props.productName} <br />
       {props.rating}
       {/* <div style={{'background': `linear-gradient(90deg, yellow ${ratingWidth}%, #FFF ${1 - ratingWidth}%)`, 'width': '80px'}}> */}
       {/* {stars} */}
-      <div class="floated">
+      <div className={style.floated}>
         <img src="style/images/starslaced.png" alt="star" style={{
           left: `${ratingWidth}px`,
           // left: '-170px',

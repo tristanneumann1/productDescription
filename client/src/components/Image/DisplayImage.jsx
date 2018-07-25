@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import style from '../../../dist/style/styles.css';
 
 const DisplayImage = (props) => {
   console.log('pic to display: ', props.displayedPicture);
   return (
-    <div class="display-image">
-      <img src={`https://fakeimg.pl/640x480/?text=${props.displayedPicture}`} class="displayed-pic" />
+    <div className={style.displayImage}>
+      <img src={`https://fakeimg.pl/640x480/?text=${props.displayedPicture}`} className={style.displayedPic} />
     </div>
   );
 };

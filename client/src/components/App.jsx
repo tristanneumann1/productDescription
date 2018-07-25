@@ -4,7 +4,8 @@ import ProductTitle from './ProductTitle.jsx';
 import Description from './Description/Description.jsx';
 import ImageList from './Image/ImageList';
 import axios from 'axios';
-
+import style from '../../dist/style/styles.css';
+console.log('style: ', style);
 
 class App extends Component {
   constructor(props) {
@@ -37,8 +38,12 @@ class App extends Component {
   render() {
     console.log('disp pic sent', this.state.displayedPicture);
     return (
-      <div class="app-container">
-        <ImageList pictures={this.state.pictures} displayedPicture={this.state.displayedPicture} handleChangeDisplay={this.handleChangeDisplay}/>
+      <div className={style.appContainer}>
+        <ImageList
+          pictures={this.state.pictures}
+          displayedPicture={this.state.displayedPicture}
+          handleChangeDisplay={this.handleChangeDisplay}
+        />
         <DisplayImage displayedPicture={this.state.displayedPicture} />
         <ProductTitle productName={this.state.productName} rating={this.state.rating} />
         <Description price={this.state.price} descriptions={this.state.descriptions} />

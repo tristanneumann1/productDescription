@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import DescriptionList from './DescriptionList.jsx';
+import style from '../../../dist/style/styles.css';
 
 const Description = (props) => {
   return (
-    <div class="product-description">
-      <div class="price-container">
-        <div class="price-title">
+    <div className={style.productDescription}>
+      <div className={style.priceContainer}>
+        <div className={style.priceTitle}>
           Price:
         </div> 
-        <div class="price">
-          <span class="price-text">{`$${props.price}`}</span> & <span class="bold">FREE Shipping</span> on orders over $25 shipped by Amazon.
+        <div className={style.price}>
+          <span className={style.priceText}>{`$${props.price}`}</span> & <span class="bold">FREE Shipping</span> on orders over $25 shipped by Amazon.
         </div>
       </div> <br />
       <DescriptionList descriptions={props.descriptions}/>

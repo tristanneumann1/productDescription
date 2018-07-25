@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import style from '../../../dist/style/styles.css';
 
 const ImageList = (props) => {
   let imageList = <img src={'https://fakeimg.pl/37x37/'} />;
   if (props.pictures) {
     imageList = props.pictures.map(picture => {
-      console.log('addng pics', picture);
-      return <img src={`https://fakeimg.pl/37x37/?text=${picture}`} class="image-entry"
-        onMouseOver={()=>{ props.handleChangeDisplay(picture); }}/>;
+      let className = (props.displayedPicture === picture) ? style.imageEntryDisplayed : style.imageEntry;
+      return <img
+        src={`https://fakeimg.pl/37x37/?text=${picture}`}
+        className={className}
+        onMouseOver={()=>{ props.handleChangeDisplay(picture); }}
+      />;
     });
   }
   return (
-    <div class="image-list">
+    <div className={style.imageList}>
       {imageList}
     </div>
   );
