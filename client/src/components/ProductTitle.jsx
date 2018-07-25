@@ -8,12 +8,12 @@ const ProductTitle = (props) => {
   // }
   let halfStars = Math.round(props.rating / 0.5);
   let ratingWidth = ((halfStars * -0.5 + 5) * -16) - ((halfStars % 2 === 0) ? 0 : 162);
-  console.log('star rating: ', halfStars, ratingWidth);
+  // console.log('star rating: ', halfStars, ratingWidth);
   return (
     <div className={style.productTitle}>
       <a href="#">Amazon Seller</a> <br />
       {props.productName} <br />
-      {props.rating}
+      {/* {props.rating} */}
       {/* <div style={{'background': `linear-gradient(90deg, yellow ${ratingWidth}%, #FFF ${1 - ratingWidth}%)`, 'width': '80px'}}> */}
       {/* {stars} */}
       <div className={style.floated}>
@@ -25,7 +25,10 @@ const ProductTitle = (props) => {
           position: 'relative',
         }}/>
       </div>
-      {/* </div> */}
+      <span className={style.downArrow}>{'\u25BE'}</span>
+      <a href='#'>12 customer reviews</a> | 
+      <a href='#'>12 answered questions</a>
+      <div className={style.borderBottom} />
     </div>
   );
 };

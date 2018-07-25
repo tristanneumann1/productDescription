@@ -2,7 +2,6 @@
   background-color: powderblue
 } */
 :global(#app) {
-  border: black solid 3px;
   margin: 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
@@ -27,11 +26,13 @@
 /* CONTAINERS */
 
 :local(.appContainer) {
+  border: black solid 3px;
   display: grid;
-  grid-template-columns: [col-start] 53px [selected-pic] 40fr [description] 60fr [col-end];
+  grid-template-columns: [col-start] 53px [selected-pic] 43fr [description] 57fr [col-end];
   grid-template-rows: [row-start] auto [title] 100fr [row-end];
   height: 500px;
-  width: 100%;
+  max-width: 1080px;
+  min-width: 750px;
 }
 
 :local(.priceContainer) {
@@ -55,6 +56,11 @@
   width:100%;
 }
 
+:local(.displayImageText) {
+  margin-top: 10px;
+  text-align: center;
+}
+
 :local(.imageList) img {
   border: gray solid 1px;
   border-radius: 3px;
@@ -71,11 +77,19 @@
 /* TITLE */
 
 :local(.productTitle) {
+  position: relative;
   grid-column: description / col-end;
   grid-row: row-start / title;
   font-size: 20px;
   float: right;
-  /* border: 1px solid black; */
+  /* border-bottom: 0.5px solid lightgrey; */
+}
+
+:local(.productTitle .borderBottom) {
+  border-bottom: 0.5px solid lightgrey;
+  position: absolute;
+  left: 10%;
+  right: 10%;
 }
 
 :local(.productTitle img) {
@@ -84,9 +98,21 @@
   position: relative;
 }
 
+/* :local(.ratingContainer) {
+  width: 100%;
+} */
+
 :local(.productTitle .floated) {
   width: 80px;
   overflow: hidden;
+  float: left;
+}
+
+:local(.downArrow) {
+  float: left;
+}
+:local(.downArrow:hover) {
+  color: grey;
 }
 
 :local(.imageList) {
