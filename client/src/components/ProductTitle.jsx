@@ -6,7 +6,8 @@ const ProductTitle = (props) => {
   // for (let i = 0; i < 5; i++) {
   //   stars.push(<img src="style/images/star.png" alt="star" />);
   // }
-  let halfStars = Math.round(props.rating / 0.5);
+  let rating = (props.ratings && props.ratings.length) ? props.ratings.reduce((a, b) => a + b, 0) / props.ratings.length : 0;
+  let halfStars = Math.round(rating / 0.5);
   let ratingWidth = ((halfStars * -0.5 + 5) * -16) - ((halfStars % 2 === 0) ? 0 : 162);
   // console.log('star rating: ', halfStars, ratingWidth);
   return (
@@ -26,8 +27,8 @@ const ProductTitle = (props) => {
         }}/>
       </div>
       <span className={style.downArrow}>{'\u25BE'}</span>
-      <a href='#'>12 customer reviews</a> | 
-      <a href='#'>12 answered questions</a>
+      <a href='#'>{+(props.ratings && props.ratings.length)} customer reviews</a> | 
+      <a href='#'>{+(props.questions)} answered questions</a>
       <div className={style.borderBottom} />
     </div>
   );

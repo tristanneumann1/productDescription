@@ -19,7 +19,8 @@ class App extends Component {
         // this.props.product = product.data;
         this.setState({
           productName: product.data.product_name,
-          rating: product.data.rating,
+          questions: product.data.questions,
+          ratings: product.data.ratings,
           pictures: product.data.pictureUrls,
           price: product.data.price,
           descriptions: product.data.descriptionTexts,
@@ -45,7 +46,7 @@ class App extends Component {
           handleChangeDisplay={this.handleChangeDisplay}
         />
         <DisplayImage displayedPicture={this.state.displayedPicture} />
-        <ProductTitle productName={this.state.productName} rating={this.state.rating} />
+        <ProductTitle productName={this.state.productName} questions={this.state.questions} ratings={this.state.ratings}/>
         <Description price={this.state.price} descriptions={this.state.descriptions} />
       </div>
     );

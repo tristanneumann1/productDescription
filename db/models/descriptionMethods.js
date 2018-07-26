@@ -8,9 +8,9 @@ const postDescription = (descriptionText, productId, cb) => {
       'productId': productId
     }
   })
-  .then((desc)=>{ cb(null, desc); })
-  .catch((err)=>{ cb(err); });
-}
+    .then((desc)=>{ cb(null, desc); })
+    .catch((err)=>{ cb(err); });
+};
 
 const getDescriptions = (productId, cb) => {
   descriptionModel.findAll({
@@ -18,8 +18,8 @@ const getDescriptions = (productId, cb) => {
       'productId': productId
     }
   })
-  .then((descs)=>{ cb(null, descs); })
-  .catch((err)=>{ cb(err); });
-}
+    .then((descs)=>{ cb(null, descs); })
+    .catch((err)=>{ cb(err); });
+};
 
 module.exports = { postDescription, getDescriptions };

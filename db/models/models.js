@@ -11,10 +11,10 @@ const productModel = product.define('product', {
     type: Sequelize.DOUBLE,
     allowNull: false
   },
-  rating: {
-    type: Sequelize.DOUBLE,
-    defaultValue: 5
-  }
+  questions: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
 });
 
 
@@ -34,8 +34,17 @@ const descriptionModel = product.define('product_description', {
 descriptionModel.belongsTo(productModel);
 productModel.hasMany(descriptionModel, {as: 'Descriptions'});
 
+const ratingModel = product.define('product_rating', {
+  'rating': {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  }
+});
+ratingModel.belongsTo(productModel);
+productModel.hasMany(ratingModel, {as: 'Ratings'});
+
 product.sync({force: false});
 
 // const seed = require('../seed.js');
 
-module.exports = {productModel, pictureModel, descriptionModel};
+module.exports = {productModel, pictureModel, descriptionModel, ratingModel};
