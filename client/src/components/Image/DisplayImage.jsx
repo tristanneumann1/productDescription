@@ -12,19 +12,19 @@ class DisplayImage extends Component {
   }
 
   handleEnter(e) {
-    console.log('img hovered');
     e.preventDefault();
     this.setState({
       hover: true,
     });
+    this.props.handleZoom(this.props.displayedPicture);
   }
 
   handleLeave(e) {
-    console.log('img left');
     e.preventDefault();
     this.setState({
       hover: false,
     });
+    this.props.handleZoom('');
   }
 
   render() {

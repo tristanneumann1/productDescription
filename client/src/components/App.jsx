@@ -24,14 +24,22 @@ class App extends Component {
           price: product.data.price,
           descriptions: product.data.descriptionTexts,
           displayedPicture: product.data.pictureUrls[0] || '',
+          hoveredPicture: '',
         });
       });
     this.handleChangeDisplay = this.handleChangeDisplay.bind(this);
+    this.handleZoom = this.handleZoom.bind(this);
   }
 
   handleChangeDisplay(picture) {
     this.setState({
       displayedPicture: picture,
+    });
+  }
+
+  handleZoom(picture) {
+    this.setState({
+      hoveredPicture: picture,
     });
   }
 
@@ -44,9 +52,13 @@ class App extends Component {
           displayedPicture={this.state.displayedPicture}
           handleChangeDisplay={this.handleChangeDisplay}
         />
-        <DisplayImage displayedPicture={this.state.displayedPicture} />
-        <ProductTitle productName={this.state.productName} questions={this.state.questions} ratings={this.state.ratings}/>
-        <Description price={this.state.price} descriptions={this.state.descriptions} />
+        <DisplayImage displayedPicture={this.state.displayedPicture} handleZoom={this.handleZoom}/>
+        <ProductTitle
+          productName={this.state.productName}
+          questions={this.state.questions}
+          ratings={this.state.ratings}
+        />
+        <Description price={this.state.price} descriptions={this.state.descriptions} hoveredPicture={this.state.hoveredPicture} />
       </div>
     );
   }
