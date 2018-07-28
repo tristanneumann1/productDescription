@@ -5,7 +5,6 @@ import Description from './Description/Description.jsx';
 import ImageList from './Image/ImageList';
 import axios from 'axios';
 import style from '../../dist/style/styles.css';
-console.log('style: ', style);
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +36,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('disp pic sent', this.state.displayedPicture);
+    // console.log('disp pic sent', this.state.displayedPicture);
     return (
       <div className={style.appContainer}>
         <ImageList

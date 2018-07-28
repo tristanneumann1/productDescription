@@ -12,8 +12,8 @@ const ProductTitle = (props) => {
   // console.log('star rating: ', halfStars, ratingWidth);
   return (
     <div className={style.productTitle}>
-      <a href="#">Amazon Seller</a> <br />
-      {props.productName} <br />
+      <a href="#">Amazon Seller</a><br />
+      {props.productName}<br />
       {/* {props.rating} */}
       {/* <div style={{'background': `linear-gradient(90deg, yellow ${ratingWidth}%, #FFF ${1 - ratingWidth}%)`, 'width': '80px'}}> */}
       {/* {stars} */}
