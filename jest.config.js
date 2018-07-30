@@ -27,6 +27,8 @@ module.exports = {
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
+  // 'collectCoverage': true,
+  // 'coverageReporters': ['json', 'html'],
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [

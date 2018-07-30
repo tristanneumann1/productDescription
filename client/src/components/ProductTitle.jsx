@@ -14,11 +14,8 @@ const ProductTitle = (props) => {
     <div className={style.productTitle}>
       <a href="#">Amazon Seller</a><br />
       {props.productName}<br />
-      {/* {props.rating} */}
-      {/* <div style={{'background': `linear-gradient(90deg, yellow ${ratingWidth}%, #FFF ${1 - ratingWidth}%)`, 'width': '80px'}}> */}
-      {/* {stars} */}
       <div className={style.floated}>
-        <img src="style/images/starslaced.png" alt="star" style={{
+        <img src="style/images/starslaced.png" alt="star" title={`${Math.round(rating * 10) / 10} out of 5 stars`} style={{
           left: `${ratingWidth}px`,
           // left: '-170px',
           width: 'auto',
