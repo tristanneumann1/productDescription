@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from '../../../dist/style/styles.css';
+import style from '../../style/styles.css';
 
 const ImageList = (props) => {
   let imageList = <img src={'https://fakeimg.pl/37x37/'} />;

@@ -4,7 +4,7 @@ import ProductTitle from './ProductTitle.jsx';
 import Description from './Description/Description.jsx';
 import ImageList from './Image/ImageList';
 import axios from 'axios';
-import style from '../../dist/style/styles.css';
+import style from '../style/styles.css';
 
 class ProductDescription extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DescriptionList from './DescriptionList.jsx';
-import style from '../../../dist/style/styles.css';
+import style from '../../style/styles.css';
 
 const Description = (props) => {
   let hoveredPicture = '';

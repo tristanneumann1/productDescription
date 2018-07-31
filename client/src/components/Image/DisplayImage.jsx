@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from '../../../dist/style/styles.css';
+import style from '../../style/styles.css';
 
 class DisplayImage extends Component {
   constructor(props) {

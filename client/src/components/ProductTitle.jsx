@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from '../../dist/style/styles.css';
+import style from '../style/styles.css';
 
 const ProductTitle = (props) => {
   // let stars = [];
@@ -15,7 +15,7 @@ const ProductTitle = (props) => {
       <a href="#">Amazon Seller</a><br />
       {props.productName}<br />
       <div className={style.floated}>
-        <img src="style/images/starslaced.png" alt="star" title={`${Math.round(rating * 10) / 10} out of 5 stars`} style={{
+        <img src="../images/starslaced.png" alt="star" title={`${Math.round(rating * 10) / 10} out of 5 stars`} style={{
           left: `${ratingWidth}px`,
           // left: '-170px',
           width: 'auto',
