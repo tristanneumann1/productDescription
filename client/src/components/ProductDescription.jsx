@@ -6,7 +6,7 @@ import ImageList from './Image/ImageList';
 import axios from 'axios';
 import style from '../../dist/style/styles.css';
 
-class App extends Component {
+class ProductDescription extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,4 +64,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ProductDescription;

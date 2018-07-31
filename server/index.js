@@ -14,6 +14,11 @@ let port = 3001;
 
 server.use(morgan());
 server.use(helmet());
+server.use(function(req, res, next) {  
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+}); 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 server.use(express.static(path.join(__dirname, './../client/dist')));
