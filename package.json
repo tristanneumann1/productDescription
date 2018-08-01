@@ -13,7 +13,8 @@
   "scripts": {
     "test": "jest --watchAll --coverage",
     "start": "nodemon ./server",
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "seed": "node ./db/seed.js"
   },
   "repository": {
     "type": "git",
