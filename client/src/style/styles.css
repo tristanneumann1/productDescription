@@ -147,7 +147,7 @@
   /* border: 1px solid red; */
 }
 
-:local(li::before) {
+:local(.descriptionList li::before) {
   content: "•";
   color: #949494;
   display: inline-block;

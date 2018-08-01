@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DescriptionEntry from './DescriptionEntry.jsx';
+import style from '../../style/styles.css';
 
 const DescriptionList = (props) => {
   let descriptionEntries;
@@ -9,7 +10,7 @@ const DescriptionList = (props) => {
     });
   }
   return (
-    <ul>
+    <ul className={style.descriptionList}>
       {descriptionEntries}
     </ul>
   );
