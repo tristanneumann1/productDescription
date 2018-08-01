@@ -7,7 +7,7 @@ const path = require('path');
 
 const router = require('./router');
 
-// const seed = require('./seed.js');
+// const seed = require('../db/seed.js');
 
 const server = express();
 let port = 3001;

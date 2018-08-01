@@ -10,9 +10,9 @@ const postPicture = (pictureUrl, productId, cb) => {
       'productId': productId
     }
   })
-  .then((pic)=>{ cb(null, pic); })
-  .catch((err)=>{ cb(err); });
-}
+    .then((pic)=>{ cb(null, pic); })
+    .catch((err)=>{ cb(err); });
+};
 
 const getPictures = (productId, cb) => {
   pictureModel.findAll({
@@ -20,8 +20,8 @@ const getPictures = (productId, cb) => {
       'productId': productId
     }
   })
-  .then((pics)=>{ cb(null, pics); })
-  .catch((err)=>{ cb(err); });
-}
+    .then((pics)=>{ cb(null, pics); })
+    .catch((err)=>{ cb(err); });
+};
 
 module.exports = { postPicture, getPictures };

@@ -64,3 +64,4 @@ typings/
 .next
 /client/dist/bundle.js
 /config.js
+/aws-keys.json
