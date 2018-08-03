@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "test": "jest --watchAll --coverage",
-    "start": "nodemon ./server",
+    "start": "node ./server",
     "build": "webpack -w",
     "seed": "node ./db/seed.js"
   },

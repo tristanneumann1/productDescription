@@ -15,5 +15,4 @@ const DescriptionList = (props) => {
     </ul>
   );
 };
-
 export default DescriptionList;
