@@ -13,19 +13,16 @@ const cb = (err, description, res, status) => {
 
 const controller = {
   getProduct(req, res) {
-    // console.log(req.query);
     let { productName } = req.query;
     status = 200;
     getProduct(productName, (err, description)=>cb(err, description, res, status));
   },
   postDescription(req, res) {
-    // console.log(req.body);
     let { descriptionText, productId } = req.body;
     status = 201;
     postDescription(descriptionText, productId, (err, description)=>cb(err, description, res, status));
   },
   postPicture(req, res) {
-    // console.log(req.body);
     let { pictureUrl, productId } = req.body;
     status = 201;
     postPicture(pictureUrl, productId, (err, description)=>cb(err, description, res, status));

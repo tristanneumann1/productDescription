@@ -24,7 +24,6 @@ for (let j = 0; j < ps * 3; j++) {
     productId: faker.random.number({min: 1, max: ps, precision: 1}),	
     descriptionText: faker.lorem.sentence(),	
   });	
-  // let pictureLorem =	
   productId = faker.random.number({min: 1, max: ps, precision: 1});	
   pictures.push({	
     productId,	
@@ -74,38 +73,4 @@ ratingPoster = (rating, i) => {
     }	
   });	
 };	
-productPoster(products[0], 0);	
-// module.exports = faker.commerce.productName();	
-//console.log(pictures);	
-// aws.config.update({	
-//   region: 'us-west-1',	
-//   accessKeyId,	
-//   secretAccessKey,	
-// });	
-// const sign = function(filename, filetype, pic) {	
-//   var s3 = new aws.S3();	
-//   var params = {	
-//     Bucket: 'mormont',	
-//     Key: filename,	
-//     Expires: 60,	
-//     ContentType: filetype,	
-//   };	
-//   s3.getSignedUrl('putObject', params, (err, signedUrl) => {	
-//     if(err){ console.error(err); } else {	
-      	
-//       var options = {	
-//         headers: {	
-//           'Content-Type': filetype,	
-//         }	
-//       };	
-//       axios.put(signedUrl, pic, options)	
-//       .then((result)=>{console.log('success putting data', result)})	
-//       .catch((err)=>{console.log('err posting pic', err)});	
-//     }	
-//   });	
-// }	
-// sign('dog', 'image/jpeg')	
-// axios.get('https://loremflickr.com/320/240')	
-// .then((pic)=>{	
-//   sign('cat3.jpg', pic.headers['content-type'], pic.data);	
-// });
+productPoster(products[0], 0);

@@ -19,32 +19,6 @@ const postProduct = (productName, price, questions, cb) => {
 };
 
 const getProduct = (productName, cb) => {
-  // productModel.getDescriptions(1, (val)=>{console.log('VAL', val)})
-  // productModel.findOne({
-  //   where: {
-  //     product_name: productName
-  //   },
-  //   // include: [{
-  //   //   model: 'Pictures',
-  //   //   as: 'p'
-  //   // }],
-  //   attributes: [
-  //     'id',
-  //     'product_name',
-  //     'price',
-  //     'rating',
-  //   ],
-  // })
-  // .then((product)=>{ 
-  //   // console.log('PRODUCT: ', product);
-  //   cb(null, product); })
-  // .catch((err)=>{
-  //   // console.log('in product catch', err);
-  //   cb(err); })
-
-
-
-
   const productToFind = productName ? {
     'product_name': productName
   } : {

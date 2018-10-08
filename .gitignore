@@ -1,5 +1,3 @@
-.config.js
-config.js
 .vscode/
 # Logs
 logs
@@ -62,6 +60,8 @@ typings/
 
 # next.js build output
 .next
+
+# folders and files
 /client/dist/bundle.js
 /config.js
 /aws-keys.json

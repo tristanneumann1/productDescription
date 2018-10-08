@@ -3,18 +3,19 @@ services:
   db:
     image: postgres
     restart: always
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres1
       POSTGRES_DB: product
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - "5432:80"
   web:
     # replace username/repo:tag with your name and image details
-    image: tristanneumann1/productDescription:part1
+    image: webpack-docker
+    depends_on:
+      - db
+    links:
+      - db
     deploy:
       replicas: 1
       restart_policy:
@@ -24,18 +25,7 @@ services:
           cpus: "0.1"
           memory: 250M
     ports:
-      - "3000:80"
-    networks:
-      - webnet
-  visualizer:
-    image: dockersamples/visualizer:stable
-    ports:
-      - "8080:8080"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    deploy:
-      placement:
-        constraints: [node.role == manager]
+      - "3000:3000"
     networks:
       - webnet
 networks:
