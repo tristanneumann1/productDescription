@@ -1,4 +1,4 @@
-An Amazon product page clone;
+# An Amazon product page clone;
 
 Specifically the product description module
 
