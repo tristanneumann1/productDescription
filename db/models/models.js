@@ -45,6 +45,4 @@ productModel.hasMany(ratingModel, {as: 'Ratings'});
 
 product.sync({force: false});
 
-// const seed = require('../seed.js');
-
 module.exports = {productModel, pictureModel, descriptionModel, ratingModel};

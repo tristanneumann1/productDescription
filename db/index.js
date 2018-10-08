@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-// const {dbUsername, dbPassword} = require('../config.js');
+const {dbUsername, dbPassword} = require('../config.js');
 
-const product = new Sequelize('product', 'postgres', 'postgres1', {
+const product = new Sequelize('product', dbUsername, dbPassword, {
   host: 'localhost',
   dialect: 'postgres',
   operatorsAliases: false,
